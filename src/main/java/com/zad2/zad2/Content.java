@@ -29,8 +29,8 @@ public class Content {
      * @return numbersCount
      */
 
-    private int countNumbers(String string){
-        return string.chars().filter(Character::isDigit).sum();
+    private long countNumbers(String string){
+        return string.chars().filter(Character::isDigit).count();
     }
 
     /**
@@ -39,8 +39,8 @@ public class Content {
      * @return lowerCaseCount
      */
 
-    private int countLowerCase(String string){
-        return string.chars().filter(Character::isLowerCase).sum();
+    private long countLowerCase(String string){
+        return string.chars().filter(Character::isLowerCase).count();
     }
 
     /**
@@ -49,8 +49,8 @@ public class Content {
      * @return upperCaseCount
      */
 
-    private int countUpperCase(String string){
-        return string.chars().filter(Character::isUpperCase).sum();
+    private long countUpperCase(String string){
+        return string.chars().filter(Character::isUpperCase).count();
     }
 
     /**
@@ -59,7 +59,7 @@ public class Content {
      * @return
      */
 
-    private int countSpecialChar(String string){
+    private long countSpecialChar(String string){
         return string.length() - countLowerCase(string) - countNumbers(string) - countUpperCase(string);
     }
 }
