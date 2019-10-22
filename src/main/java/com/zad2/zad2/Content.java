@@ -5,6 +5,11 @@ package com.zad2.zad2;
  */
 
 public class Content {
+    private final String string;
+    private final long numberCounter;
+    private final long lowerCaseCounter;
+    private final long upperCaseCounter;
+    private final long specialCharCounter;
 
     /**
      * Constructor gets string parameters.
@@ -12,6 +17,11 @@ public class Content {
      */
 
     public Content(String string) {
+        this.string = string;
+        numberCounter = countNumbers(string);
+        lowerCaseCounter = countLowerCase(string);
+        upperCaseCounter = countUpperCase(string);
+        specialCharCounter = countSpecialChar(string);
     }
 
     /**
@@ -20,7 +30,7 @@ public class Content {
      */
 
     private int countNumbers(String string){
-        return 0;
+        return string.chars().filter(Character::isDigit).sum();
     }
 
     /**
@@ -30,7 +40,7 @@ public class Content {
      */
 
     private int countLowerCase(String string){
-        return 0;
+        return string.chars().filter(Character::isLowerCase).sum();
     }
 
     /**
@@ -40,7 +50,7 @@ public class Content {
      */
 
     private int countUpperCase(String string){
-        return 0;
+        return string.chars().filter(Character::isUpperCase).sum();
     }
 
     /**
@@ -50,6 +60,6 @@ public class Content {
      */
 
     private int countSpecialChar(String string){
-        return 0;
+        return string.length() - countLowerCase(string) - countNumbers(string) - countUpperCase(string);
     }
 }
