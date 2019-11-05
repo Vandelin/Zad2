@@ -5,11 +5,11 @@ package com.zad2.zad2;
  */
 
 public class Content {
-    private final String string;
-    private final long numberCounter;
-    private final long lowerCaseCounter;
-    private final long upperCaseCounter;
-    private final long specialCharCounter;
+    public final String string;
+    public final long numberCounter;
+    public final long lowerCaseCounter;
+    public final long upperCaseCounter;
+    public final long specialCharCounter;
 
     /**
      * Constructor gets string parameters.
